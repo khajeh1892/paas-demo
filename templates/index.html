@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>PaaS Demo</title>
-    <link rel="stylesheet" href="/static/style.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>🚀 PaaS App Deployed Successfully</h1>
-        <p>This app is running on Render</p>
-        <button>Everything is OK ✅</button>
-    </div>
+    <h1>PaaS app is running successfully 🚀</h1>
 </body>
 </html>
