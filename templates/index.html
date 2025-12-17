@@ -1,12 +1,38 @@
-<!DOCTYPE html>
+<h1 style="position:fixed;top:10px;left:10px;z-index:9999;background:#000;color:#0f0;padding:6px;border-radius:8px">
+  BUILD v2 - {{ build }}
+</h1>
+
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>PaaS Demo</title>
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PaaS Demo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>PaaS app is running successfully 🚀</h1>
+
+<canvas id="stars"></canvas>
+
+<div class="hud">
+  <div class="badge">PaaS Demo</div>
+  <div class="hint">Press <b>Start</b> to enable sound 🎮</div>
+  <div class="links">
+    <a class="btn" href="{{ url_for('paas') }}">Explain PaaS</a>
+    <button id="startBtn" class="btn btn2">Start</button>
+  </div>
+</div>
+
+<!-- سفینه -->
+<div class="ship" aria-label="spaceship">
+  <div class="ship-body"></div>
+  <div class="ship-flame"></div>
+</div>
+
+<audio id="sfx" preload="auto">
+  <source src="{{ url_for('static', filename='sfx.mp3') }}" type="audio/mpeg">
+</audio>
+
+<script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 </html>
