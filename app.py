@@ -1,11 +1,7 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "PaaS app is running successfully 🚀"
-
-@app.route("/health")
-def health():
-    return {"status": "ok"}
+    return render_template("index.html")
